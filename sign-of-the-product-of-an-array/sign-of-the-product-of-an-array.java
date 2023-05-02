@@ -1,31 +1,20 @@
 class Solution {
     public int arraySign(int[] nums) 
     {
+        int count=0;
 
-	    int[] arr=new int[nums.length];
-	    
-	    for(int i=0;i<nums.length;i++)
-	    {
-	        if(nums[i]<0)
-	        {
-	            arr[i]=-1;
-	        }
-	        else if(nums[i]>0)
-	        {
-	            arr[i]=1;
-	        }
-	        else
-	        {
-	            arr[i]=0;
-	        }
-	    }
-	    int product=1;
-	    
-	   for(int x : arr)
-	   {
-	       product*=x;
-	   }
-       return product;
-        
+        for(int x : nums)
+        {
+            if(x==0)
+            {
+                return 0;
+            }
+            else if(x<0)
+            {
+                count++;
+            }
+        }
+
+        return count%2==0 ? 1 : -1;
     }
 }
