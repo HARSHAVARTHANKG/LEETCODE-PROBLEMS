@@ -25,14 +25,7 @@ class Solution {
 				 d++;
 			 }
 		 }
-	    if(l==r && u==d)
-	    {
-				return true;
-	    }
-			else
-			{
-				return false;
-			}
+	    return l==r && u==d;
         
     }
 }
