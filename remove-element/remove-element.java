@@ -1,39 +1,23 @@
 class Solution {
     public int removeElement(int[] nums, int val) 
     {
-        	int count=0;
-		for(int i=0;i<nums.length;i++)
-		{
-		    if(nums[i]==val)
-		    {
-		        nums[i]=-1;
-		    }
-		    else
-		    {
-                count++;
-		        nums[i]=nums[i];
-		    }
-		}
-	    sort(nums);
+        if(nums==null)
+				{
+					return -1;
+				}
 
-        return count;
+				int count=0;
+
+				for(int n : nums)
+				{
+					if(n!=val)
+					{
+						nums[count++]=n;
+					}
+				}
+
+				return count;
 		
         
     }
-
-    	public static void sort(int[] arr)
-	{
-	    for(int i=0;i<arr.length;i++)
-	    {
-	        for(int j=1;j<arr.length;j++)
-	        {
-	            if(arr[j-1]<arr[j])
-	            {
-	                int temp=arr[j-1];
-	                arr[j-1]=arr[j];
-	                arr[j]=temp;
-	            }
-	        }
-	    }
-	}
 }
