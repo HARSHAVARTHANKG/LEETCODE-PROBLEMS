@@ -8,24 +8,19 @@ class Solution {
 	   
 	   else
 	   {
-			 int arr[] = new int[26];
-	    for(char c : s.toCharArray())
-	    {
-	        arr[c-'a']++;
-	    }
-	    
-	    for(char x : t.toCharArray())
-	    {
-	        arr[x-'a']--;
-	    }
-	    
-	    for(int i=0;i<arr.length;i++)
-	    {
-	        if(arr[i]!=0)
-	        {
-	            return false;
-	        }
-	    }
+	    char[] c =s.toCharArray();
+	   char[] x =t.toCharArray();
+	   
+	   Arrays.sort(c);
+	   Arrays.sort(x);
+	   
+	   for(int i=0;i<c.length;i++)
+	   {
+	       if(c[i]!=x[i])
+	       {
+	           return false;
+	       }
+	   }
 	   }
        return true; 
     }
