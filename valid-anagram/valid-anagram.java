@@ -5,23 +5,23 @@ class Solution {
 	   {
 	       return false;
 	   }
-	   
-	   else
-	   {
-	    char[] c =s.toCharArray();
+	   char[] c =s.toCharArray();
 	   char[] x =t.toCharArray();
-	   
-	   Arrays.sort(c);
-	   Arrays.sort(x);
-	   
-	   for(int i=0;i<c.length;i++)
-	   {
-	       if(c[i]!=x[i])
-	       {
-	           return false;
-	       }
-	   }
-	   }
-       return true; 
+		 int arr[]=new int[26];
+		 
+		 for(int i=0;i<c.length;i++)
+		 {
+			 arr[c[i]-'a']++;
+			 arr[x[i]-'a']--;
+		 }
+
+		 for(int i=0;i<arr.length;i++)
+		 {
+			 if(arr[i]!=0)
+			 {
+				 return false;
+			 }
+		 }
+		 return true;
     }
 }
