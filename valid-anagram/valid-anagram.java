@@ -7,12 +7,12 @@ class Solution {
 	   }
 	   char[] c =s.toCharArray();
 	   char[] x =t.toCharArray();
-		 int arr[]=new int[128];
+		 int arr[]=new int[26];
 		 
 		 for(int i=0;i<c.length;i++)
 		 {
-			 arr[c[i]]++;
-			 arr[x[i]]--;
+			 arr[c[i]-'a']++;
+			 arr[x[i]-'a']--;
 		 }
 
 		 for(int i=0;i<arr.length;i++)
