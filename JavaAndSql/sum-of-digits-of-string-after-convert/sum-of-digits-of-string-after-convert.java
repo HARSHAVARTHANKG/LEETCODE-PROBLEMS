@@ -8,11 +8,10 @@ class Solution
 		    int sum=0;
 		    for(char c :s.toCharArray())
 		    {
-		        if(c>=97 && c<=122)
-		        {
+		       
 		            int num=(int)(c-'a'+1);
 		            sum+=sumOfDigits(num);
-		        }
+		     
 		    }
 		    n++;
 		    
