@@ -1,18 +1,16 @@
 class Solution {
     public int thirdMax(int[] nums) 
     {
-        int max1=Integer.MIN_VALUE;
+     int max1=Integer.MIN_VALUE;
 		int max2=Integer.MIN_VALUE;
 		int max3=Integer.MIN_VALUE;
-		int max4=Integer.MIN_VALUE;
 		
 		HashSet<Integer> h1 = new HashSet<Integer>();
 		for(int x : nums)
 		{
 		    h1.add(x);
 		}
-		
-		System.out.println(h1);
+	
 		for(int x : h1)
 		{
 		    if(x>max1)
