@@ -21,7 +21,6 @@ public:
                 return true;
             }
             rotateIt(s);
-            cout<<s<<endl;
             i++;
         }
         return false;
