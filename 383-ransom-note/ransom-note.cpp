@@ -1,43 +1,25 @@
 class Solution {
 public:
 
-bool compareString(char c,string &magazine)
-{
-    int flag=0;
-    for(int i=0;i<magazine.length();i++)
-    {
-        if(c==magazine[i])
-        {
-           magazine.erase(i,1);
-            flag=1;
-            break;
-        }
-    }
-    if(flag)
-    {
-        return true;
-    }
-    return false;
-}
+
     bool canConstruct(string ransomNote, string magazine) 
     {
-            
-    int flag=1;
-    for(int i=0;i<ransomNote.length();i++)
-    {
-        if(!(compareString(ransomNote[i],magazine)))
+        vector<int> arr(26);
+    
+        for(char c : magazine)
         {
-           flag =0;
+            arr[c-'a']++;
         }
-    }
-    if(flag)
-    {
+    
+        for(char c : ransomNote)
+        {
+            if(arr[c-'a']==0)
+            {
+                return false;
+            }
+            arr[c-'a']--;
+        }
         return true;
     }
-    else
-    {
-        return false;
-    }
-
-    }
+    
 };
