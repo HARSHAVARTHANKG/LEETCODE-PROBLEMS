@@ -1,9 +1,5 @@
 class Solution {
 public:
-void removeCharacterInString(int ind ,string &magazine)
-{
-    magazine.erase(ind,1);
-}
 
 bool compareString(char c,string &magazine)
 {
@@ -12,8 +8,7 @@ bool compareString(char c,string &magazine)
     {
         if(c==magazine[i])
         {
-            cout<<c;
-            removeCharacterInString(i,magazine);
+           magazine.erase(i,1);
             flag=1;
             break;
         }
