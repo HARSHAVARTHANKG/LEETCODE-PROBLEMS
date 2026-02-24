@@ -13,11 +13,6 @@ public:
                 return t[i];            
             }
         }
-        
-        if(flag!=1)
-        {
-            return t[t.length()-1];
-        }
-        return 'a';
+        return t[t.length()-1];
     }
 };
