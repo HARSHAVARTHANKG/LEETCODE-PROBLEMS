@@ -10,9 +10,7 @@ public:
         {
             if(s[i]!=t[i])
             {
-                return t[i];
-                flag=1;
-                
+                return t[i];            
             }
         }
         
