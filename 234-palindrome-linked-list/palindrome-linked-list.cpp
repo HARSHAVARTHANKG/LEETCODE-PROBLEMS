@@ -30,9 +30,8 @@ public:
     }
     bool isPalindrome(ListNode* head) 
     {
-
-      
-        ListNode *slow = head, *fast = head;
+        ListNode *slow=head;
+        ListNode *fast = head;
 
         while(fast->next!=nullptr && fast->next->next!=nullptr)
         {
@@ -40,10 +39,10 @@ public:
             fast=fast->next->next;
         }
 
-        ListNode * newHead= ReverseLinkedList(slow->next);
+        ListNode * newHead = ReverseLinkedList(slow->next);
 
-        ListNode * first = head;
-        ListNode * second = newHead;
+        ListNode *first= head;
+        ListNode *second=newHead;
 
         while(second!=nullptr)
         {
@@ -57,6 +56,6 @@ public:
         }
 
         ReverseLinkedList(newHead);
-        return true;
+                return true;
     }
 };
