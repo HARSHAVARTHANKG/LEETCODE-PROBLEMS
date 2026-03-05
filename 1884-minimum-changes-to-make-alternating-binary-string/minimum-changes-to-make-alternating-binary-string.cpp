@@ -2,23 +2,37 @@ class Solution {
 public:
     int minOperations(string s) 
     {
-      int c1 = 0; // pattern 1010
-int c2 = 0; // pattern 0101
-
-for(int i = 0; i < s.length(); i++)
+       int odd=0;
+       int even=0;
+       
+      for(int i = 0; i < s.length(); i++)
 {
-    if(i % 2 == 0)
+    if(i % 2 != 0)
     {
-        if(s[i] != '1') c1++;
-        if(s[i] != '0') c2++;
+        if(s[i] != '0')
+        {
+            odd++;
+        }
+
+        if(s[i]!='1')
+        {
+            even++;
+        }
     }
     else
     {
-        if(s[i] != '0') c1++;
-        if(s[i] != '1') c2++;
+        if(s[i] != '1')
+        {
+            odd++;
+        }
+
+        if(s[i]!='0')
+        {
+            even++;
+        }
     }
 }
 
-return min(c1, c2);
+      return min(odd,even);
     }
 };
