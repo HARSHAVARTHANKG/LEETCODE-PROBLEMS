@@ -16,25 +16,14 @@ public:
         ListNode *fast = head;
 
         ListNode* temp=head;
-        int count=0;
-
-        while(temp!=nullptr)
-        {
-            temp=temp->next;
-            count++;
-        }
-
-        while(fast->next!=nullptr && fast->next->next!=nullptr)
+       
+        while(fast!=nullptr && fast->next!=nullptr)
         {
             slow=slow->next;
             fast=fast->next->next;
         }
 
-        if(count%2==0)
-        {
-             return slow->next;
-
-        }
+       
        return slow;
         
     }
