@@ -15,9 +15,9 @@ class Solution
 {
 public:
 
-    ListNode* ReverseLinkedList(ListNode * head)
+    ListNode* ReverseLL(ListNode *newHead)
     {
-        ListNode* curr=head,*prev=nullptr,*next=nullptr;
+        ListNode*curr=newHead,*prev=nullptr,*next=nullptr;
 
         while(curr!=nullptr)
         {
@@ -30,32 +30,32 @@ public:
     }
     bool isPalindrome(ListNode* head) 
     {
-        ListNode *slow=head;
-        ListNode *fast = head;
+       ListNode *slow = head;
+       ListNode *fast = head;
 
-        while(fast->next!=nullptr && fast->next->next!=nullptr)
-        {
-            slow=slow->next;
-            fast=fast->next->next;
-        }
+       while(fast->next!=nullptr && fast->next->next!=nullptr)
+       {
+          slow=slow->next;
+          fast=fast->next->next;
+       }
 
-        ListNode * newHead = ReverseLinkedList(slow->next);
+       ListNode *newHead = ReverseLL(slow->next);
 
-        ListNode *first= head;
-        ListNode *second=newHead;
+       ListNode *first = head;
+       ListNode *second=newHead;
 
-        while(second!=nullptr)
-        {
-            if(first->val != second->val)
+       while(first!=nullptr && second !=nullptr)
+       {
+            if(first->val!=second->val)
             {
-                ReverseLinkedList(newHead);
+                ReverseLL(newHead);
                 return false;
             }
             first=first->next;
             second=second->next;
-        }
-
-        ReverseLinkedList(newHead);
-                return true;
+       }
+       
+       ReverseLL(newHead);
+       return true;
     }
 };
