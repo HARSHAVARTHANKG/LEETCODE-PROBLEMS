@@ -20,17 +20,14 @@ public:
             }
             else
             {
-
-               
-                if(st.empty()  || st.top() !=x)
+                if(st.empty() ||st.top()!=x)
                 {
                     return false;
                 }
-                 st.pop();
+                st.pop();
             }
-            
-            
        }
+
        return st.empty();
     }
 };
